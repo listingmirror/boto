@@ -151,6 +151,8 @@ class ResponseFactory(object):
                     return scope[key]
 
     def find_element(self, action, suffix, parent):
+        if action is None:
+            action = ''
         element = self.search_scopes(action + suffix)
         if element is not None:
             return element
